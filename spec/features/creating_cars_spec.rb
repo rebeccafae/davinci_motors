@@ -15,12 +15,12 @@ feature 'Creating Cars' do
 
     expect(find(".flash")).to have_content('1968 Ford Mustang has been created')
 
-    expect(page).to have_table("car_table")
-
-    expect(find("#car_table")).to have_content("Ford")
-    expect(find("#car_table")).to have_content("Mustang")
-    expect(find("#car_table")).to have_content("1968")
-    expect(find("#car_table")).to have_content("2300")
+    within("#car_table") do
+      expect(page).to have_content("Ford")
+      expect(page).to have_content("Mustang")
+      expect(page).to have_content("1968")
+      expect(page).to have_content("2300")
+    end
   end
 
   scenario 'can add a second car' do
