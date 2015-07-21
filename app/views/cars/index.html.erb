@@ -1,11 +1,11 @@
 <%= link_to 'New Car', new_car_path %>
 
-<table id="car_table">
+<table id="car_table" border="5 px" width="500px">
   <thead>
     <tr>
+      <th>Year</th>
       <th>Make</th>
       <th>Model</th>
-      <th>Year</th>
       <th>Price</th>
     </tr>
   </thead>
@@ -13,10 +13,10 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
+        <td><%= car.year %></td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
-        <td><%= car.year %></td>
-        <td><%= car.price %></td>
+        <td><%= number_to_currency(car.price) %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
       </tr>
     <% end %>

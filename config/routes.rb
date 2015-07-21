@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # resources :cars
 
-  get 'cars' => 'cars#index', as: 'cars'
+  # get 'cars' => 'cars#index', as: 'cars'
 
   get 'cars/new' => 'cars#new', as: 'new_car'
 
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
   put 'cars/:id' => 'cars#update'
 
-  delete 'cars/:id' => 'cars#destroy'
+  # delete 'cars/:id' => 'cars#destroy'
 
 end
